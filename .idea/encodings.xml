@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/bean/FutureWeatherBean.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/bean/HeadlineNewsBean.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/bean/PMBean.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/bean/WeatherBean.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/net/GetNetPic.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/net/NetConnection.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/util/Config.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/view/CityActivity.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/weather/view/WeatherFragment.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/znufe/news/MainActivity.java" charset="GB2312" />
+    <file url="PROJECT" charset="GB2312" />
+  </component>
+</project>

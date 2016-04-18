@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_listview_item_split"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/fragment_techNews_listview_layout">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="4">
+        <TextView
+            android:id="@+id/fragment_techNews_listview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="test"
+            android:singleLine="true"
+            android:textColor="#313233"
+            android:textSize="16sp" />
+    
+        <TextView
+            android:id="@+id/fragment_techNews_listview_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:layout_below="@+id/fragment_techNews_listview_title"
+            android:layout_marginTop="5dp"
+            android:maxLines="4"
+            android:textColor="#7A7C80"
+            android:textSize="12sp" />
+        </LinearLayout>
+        
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/fragment_techNews_listview_photo"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_techNews_listview_relative_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_techNews_listview_layout"
+        android:layout_marginTop="8dp" >
+        
+
+        <ImageView
+            android:id="@+id/fragment_techNews_listview_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_hot"
+            android:visibility="gone"
+         />
+
+        <!--<View-->
+            <!--android:id="@+id/fragment_techNews_listview_divide1"-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_toRightOf="@+id/fragment_techNews_listview_hot"-->
+            <!--android:background="#7A7C80" />-->
+
+        <TextView
+            android:id="@+id/fragment_techNews_listview_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/fragment_techNews_listview_hot"
+            android:text="2010-10-12"
+            android:textColor="#7A7C80"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/fragment_techNews_listview_reply_Num_img"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/icon_replay_times"
+            android:layout_marginRight="55dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/fragment_techNews_listview_reply_Num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#7A7C80"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/fragment_techNews_listview_image_agree_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@+id/fragment_techNews_listview_agree_num"
+            android:background="#00000000"
+            android:src="@drawable/icon_agree" />
+
+        <TextView
+            android:id="@+id/fragment_techNews_listview_agree_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="91"
+            android:textColor="#7A7C80"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

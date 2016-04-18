@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.znufe.news.MainActivity" >
+
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_fragment_rgp" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/main_fragment_rgp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_bottom_radio_group_back"
+        android:checkedButton="@+id/main_rbn_news"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/main_rbn_news"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_rbn_news"
+            android:onClick="newsClick" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" 
+            android:layout_weight="1"
+            android:button="@null" 
+            android:drawableTop="@drawable/selector_rbn_entnews"
+            android:onClick="entnewsClick" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_rbn_technews"
+            android:onClick="TechNewsClick"
+            android:checked="false"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_rbn_weather"
+            android:onClick="photoClick" />
+    </RadioGroup>
+
+</RelativeLayout>
