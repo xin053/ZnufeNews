@@ -27,5 +27,6 @@
     <string name="dressing_index">穿衣指数</string>
     <string name="title_city">城市选择</string>
     <string name="weather">天气预报</string>
+    <string name="send_to">分享</string>
 
 </resources>

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -39,6 +41,14 @@ public class FragmentTechNews extends Fragment implements OnItemClickListener{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		activity = getActivity();
 		listView = (ListView)activity.findViewById(R.id.fragment_technews_listview); 
+		listView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener()
+		{
+			@Override
+			public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo)
+			{
+				contextMenu.add(0, 0, 0, "共享");
+			}
+		});
 		adapter = new TechNewsListViewAdapter(activity, null);
         //正在加载view
 		//listView.addFooterView(View.inflate(activity, R.layout.foot, null));
@@ -46,6 +56,31 @@ public class FragmentTechNews extends Fragment implements OnItemClickListener{
 		listView.setOnItemClickListener(this);
 		new MyAsnycTaskGetQuestion().execute();
 		super.onActivityCreated(savedInstanceState);
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+
+		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
+				.getMenuInfo();
+		int id = (int) info.id;
+		TechNews techNews = adapter.getTechNewses().get(id);
+
+		switch (item.getItemId()) {
+			case 0:
+				Intent sendIntent = new Intent();
+				sendIntent.setAction(Intent.ACTION_SEND);
+				sendIntent.putExtra(Intent.EXTRA_TEXT,getUrl(techNews.getId(),techNews.getPubDate()));
+				sendIntent.setType("text/plain");
+				startActivity(Intent.createChooser(sendIntent,getResources().getText(R.string.send_to)));
+				break;
+			
+			default:
+				break;
+		}
+
+		return super.onContextItemSelected(item);
+
 	}
 
 	/**

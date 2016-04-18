@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -42,6 +44,14 @@ public class FragmentEntNews extends Fragment implements OnItemClickListener{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         listView = (ListView)activity.findViewById(R.id.fragment_news_listview);
+        listView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener()
+        {
+            @Override
+            public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo)
+            {
+                contextMenu.add(0, 0, 0, "¹²Ïí");
+            }
+        });
         adapter = new EntNewsListViewAdapter(activity, null);
         listView.addFooterView(View.inflate(activity, R.layout.foot, null));
         listView.setAdapter(adapter);
@@ -63,6 +73,31 @@ public class FragmentEntNews extends Fragment implements OnItemClickListener{
         }
     }
 
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
+                .getMenuInfo();
+        int id = (int) info.id;
+        EntNews entNews = adapter.getEntNewss().get(id);
+
+        switch (item.getItemId()) {
+            case 0:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,getUrl(entNews.getId(),entNews.getPubDate()));
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent,getResources().getText(R.string.send_to)));
+                break;
+
+            default:
+                break;
+        }
+
+        return super.onContextItemSelected(item);
+
+    }
+    
     public String getUrl(String id,String date)
     {
         String url = "http://tech.sina.com.cn/i/"+date.split(" ")[0]+"/doc-i"+id.split("-")[0]+".shtml";
