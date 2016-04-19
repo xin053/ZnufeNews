@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 17
+    compileSdkVersion 21
     buildToolsVersion "24.0.0 rc2"
     compileOptions.encoding = "GB2312"
 
     defaultConfig {
         applicationId "com.znufe.news"
-        minSdkVersion 17
+        minSdkVersion 16
         targetSdkVersion 23
     }
 

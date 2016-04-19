@@ -10,7 +10,7 @@ public class Config {
 	public static final String KEY_WEATHER_FORMATE="format";
 	public static final String KEY_WEATHER_CITYNAME="cityname";
 	public static final String VALUE_WEATHER_USER_KEY="07ad332c4ef2e4eea5475aea92c682a9";
-	public static final String VALUE_QUALITY_USER_KEY="625984ddc6d529fbd834065e41a78fc5";
+	public static final String VALUE_QUALITY_USER_KEY="988f7a3cbf95289356a02b4dcb72ced0";
 	public static final String KEY_QUALITY_CITY="city";
 	public static final String KEY_USER_KEY="key";
 	public static final String CHARSET="utf-8";

@@ -313,9 +313,9 @@ public class WeatherFragment extends Fragment {
         String temp_str_a = tempArr[1].substring(0, tempArr[1].indexOf("¡æ"));
         String temp_str_b = tempArr[0].substring(0, tempArr[0].indexOf("¡æ"));
         // ÎÂ¶È 8¡æ~16¡æ" ¡ü ¡ý ¡ã
-        tv_today_temp.setText("¡ü " + temp_str_a + "¡ã   ¡ý" + temp_str_b + "¡ã");
+        tv_today_temp.setText("  ¡ü " + temp_str_a + "¡ã   ¡ý" + temp_str_b + "¡ã");
         tv_now_temp.setText(weatherBean.getNow_temp() + " ¡ã");
-        iv_today_weather.setImageResource(getResources().getIdentifier("d" + weatherBean.getWeather_id(), "drawable", "com.weather"));
+        iv_today_weather.setImageResource(getResources().getIdentifier("d" + weatherBean.getWeather_id(), "drawable", "com.znufe.news"));
 
         tv_today_temp_a.setText(temp_str_a + "¡ã");
         tv_today_temp_b.setText(temp_str_b + "¡ã");
@@ -334,7 +334,7 @@ public class WeatherFragment extends Fragment {
         } else {
             prefixStr = "n";
         }
-        iv_now_weather.setImageResource(getResources().getIdentifier(prefixStr + weatherBean.getWeather_id(), "drawable", "com.weather"));
+        iv_now_weather.setImageResource(getResources().getIdentifier(prefixStr + weatherBean.getWeather_id(), "drawable", "com.znufe.news"));
 
         tv_humidity.setText(weatherBean.getHumidity());
         tv_wind.setText(weatherBean.getWind());
@@ -343,7 +343,7 @@ public class WeatherFragment extends Fragment {
     }
     private void setFutureData(TextView tv_week, ImageView iv_weather, TextView tv_temp_a, TextView tv_temp_b, FutureWeatherBean bean) {
         tv_week.setText(bean.getWeek());
-        iv_weather.setImageResource(getResources().getIdentifier("d" + bean.getWeather_id(), "drawable", "com.weather"));
+        iv_weather.setImageResource(getResources().getIdentifier("d" + bean.getWeather_id(), "drawable", "com.znufe.news"));
         String[] tempArr = bean.getTemp().split("~");
         String temp_str_a = tempArr[1].substring(0, tempArr[1].indexOf("¡æ"));
         String temp_str_b = tempArr[0].substring(0, tempArr[0].indexOf("¡æ"));

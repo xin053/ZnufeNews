@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".TechNewsDetailsActivity">
         </activity>
+        <activity android:name=".HeadlineNewsDetailsAcitivty">
+        </activity>
     </application>
 
 </manifest>
